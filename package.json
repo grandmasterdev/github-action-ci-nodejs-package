@@ -1,7 +1,7 @@
 {
-  "name": "ci-nodejs-build-test",
+  "name": "ci-nodejs-package",
   "version": "1.0.0",
-  "description": "Build and test action for nodejs CI",
+  "description": "Package the artifact",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest --collectCoverage",
