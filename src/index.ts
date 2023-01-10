@@ -1,3 +1,3 @@
-import { buildTest } from "./build-and-test";
+import { pack } from "./pack/pack";
 
-buildTest();
+pack();

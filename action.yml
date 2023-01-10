@@ -1,24 +1,17 @@
-name: 'ci-nodejs-build-test'
-description: 'Build and test action for nodejs CI'
+name: 'ci-nodejs-package'
+description: 'Package the artifact'
 
 inputs:
   working-dir:
     description: 'the project working directory'
     required: true
-  github-user:
-    description: 'user of github'
+  packager:
+    description: 'zip or tar package manager to use'
+    required: false
+    default: 'tar'
+  assets:
+    description: 'list of files or folders that you wanted to be included as the artifact. seperated by ","'
     required: true
-    default: 'github-action-committer'
-  github-email:
-    description: 'email of the github user'
-    require: true
-  github-remote:
-    description: 'the git remote name'
-    require: false
-    default: 'origin'
-  github-token:
-    description: 'github token for action operation'
-    require: true
 
 outputs:
   is_updated:
