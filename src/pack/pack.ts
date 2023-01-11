@@ -1,5 +1,6 @@
 import { getInput } from "@actions/core";
 import { exec } from "@actions/exec";
+import { assertAssetPackageBreak } from "./../utils/pack-util";
 
 const packager = getInput("packager", {
   required: true,
@@ -9,11 +10,17 @@ const assets = getInput("assets", {
 });
 
 export const pack = async () => {
-  if (packager === "zip") {
-    await exec("zip", []);
-  } else if (packager === "tar") {
-    await exec("tar", []);
-  } else {
+  if (!assets) {
+    throw new Error(`[pack] No assets found to package!`);
+  }
+
+  const assetList = assets.split(",");
+
+  if (!packager) {
     throw new Error(`[pack] No packager selected!`);
   }
+
+  const args = assertAssetPackageBreak(assetList, packager);
+
+  await exec(packager, args);
 };
