@@ -66,9 +66,11 @@ or if you are using `context`
 
 ## Inputs
 
-| Name        | Description                                    | Required?          |
-| ----------- | ---------------------------------------------- | ------------------ |
-| working-dir | The directory where the code is being checkout | :heavy_check_mark: |
+| Name        | Description                                                                                                                  | Required?          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| working-dir | The directory where the code is being checkout                                                                               | :heavy_check_mark: |
+| packager    | The package option to use `zip` or `tar`                                                                                     | :heavy_check_mark: |
+| assets      | The files or folders to be included in the package. It has to be a string seperated by `,` (eg. dist,package.json,README.md) | :heavy_check_mark: |
 
 ## Outputs
 
