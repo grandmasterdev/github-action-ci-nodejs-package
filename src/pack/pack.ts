@@ -22,5 +22,5 @@ export const pack = async () => {
 
   const args = assertAssetPackageBreak(assetList, packager);
 
-  await exec(packager, args);
+  await exec(packager, [`build.${packager}`, ...args]);
 };

@@ -3960,7 +3960,7 @@ var pack = () =>
       throw new Error(`[pack] No packager selected!`);
     }
     const args = assertAssetPackageBreak(assetList, packager);
-    yield (0, import_exec.exec)(packager, args);
+    yield (0, import_exec.exec)(packager, [`build.${packager}`, ...args]);
   });
 
 // src/index.ts
