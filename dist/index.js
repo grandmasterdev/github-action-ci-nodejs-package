@@ -3959,8 +3959,12 @@ var pack = () =>
     if (!packager) {
       throw new Error(`[pack] No packager selected!`);
     }
-    const args = assertAssetPackageBreak(assetList, packager);
-    yield (0, import_exec.exec)(packager, [`build.${packager}`, ...args]);
+    const assetWithBreaker = assertAssetPackageBreak(assetList, packager);
+    const args =
+      packager === "tar"
+        ? assetWithBreaker
+        : ["-r", `build.${packager}`, "./", ...assetWithBreaker];
+    yield (0, import_exec.exec)(packager, args);
   });
 
 // src/index.ts
