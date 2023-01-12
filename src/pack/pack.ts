@@ -20,7 +20,11 @@ export const pack = async () => {
     throw new Error(`[pack] No packager selected!`);
   }
 
-  const args = assertAssetPackageBreak(assetList, packager);
+  const assetWithBreaker = assertAssetPackageBreak(assetList, packager);
+  const args =
+    packager === "tar"
+      ? assetWithBreaker
+      : ["-r", `build.${packager}`, "./", ...assetWithBreaker];
 
-  await exec(packager, [`build.${packager}`, ...args]);
+  await exec(packager, args);
 };
