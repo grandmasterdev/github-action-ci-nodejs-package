@@ -13,10 +13,7 @@ export const assertAssetPackageBreak = (
 
     if (index < assetList.length - 1) {
       if (breakType === "zip") {
-        newAssetList.push(" -i ");
-      }
-      if (breakType === "tar") {
-        newAssetList.push(" ");
+        newAssetList.push("-i");
       }
     }
   });
