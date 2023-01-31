@@ -3959,7 +3959,7 @@ var pack = () =>
     const assetWithBreaker = assertAssetPackageBreak(assetList, packager);
     const args =
       packager === "tar"
-        ? assetWithBreaker
+        ? [`build.${packager}`, ...assetWithBreaker]
         : ["-r", `build.${packager}`, "./", ...assetWithBreaker];
     yield (0, import_exec.exec)(packager, args);
   });

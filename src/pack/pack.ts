@@ -23,7 +23,7 @@ export const pack = async () => {
   const assetWithBreaker = assertAssetPackageBreak(assetList, packager);
   const args =
     packager === "tar"
-      ? assetWithBreaker
+      ? [`build.${packager}`, ...assetWithBreaker]
       : ["-r", `build.${packager}`, "./", ...assetWithBreaker];
 
   await exec(packager, args);
