@@ -13,11 +13,11 @@ describe("pack-util tests", () => {
 
     expect(result).toEqual([
       "build/\\*",
-      "-i",
+
       "package.json",
-      "-i",
+
       "package-lock.json",
-      "-i",
+
       "etc/\\*",
     ]);
   });

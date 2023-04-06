@@ -11,11 +11,11 @@ export const assertAssetPackageBreak = (
   assetList.forEach((asset, index) => {
     newAssetList.push(asset);
 
-    if (index < assetList.length - 1) {
-      if (breakType === "zip") {
-        newAssetList.push("-i");
-      }
-    }
+    // if (index < assetList.length - 1) {
+    //   if (breakType === "zip") {
+    //     newAssetList.push("-i");
+    //   }
+    // }
   });
 
   return newAssetList;
