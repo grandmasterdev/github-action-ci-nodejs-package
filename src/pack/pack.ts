@@ -24,7 +24,7 @@ export const pack = async () => {
   const args =
     packager === "tar"
       ? ["-cvf", `build.${packager}`, ...assetWithBreaker]
-      : ["-r", `build.${packager}`, "./", ...assetWithBreaker];
+      : ["-r", `build.${packager}`, ...assetWithBreaker];
 
   await exec(packager, args);
 };

@@ -3955,7 +3955,7 @@ var pack = () =>
     const args =
       packager === "tar"
         ? ["-cvf", `build.${packager}`, ...assetWithBreaker]
-        : ["-r", `build.${packager}`, "./", ...assetWithBreaker];
+        : ["-r", `build.${packager}`, ...assetWithBreaker];
     yield (0, import_exec.exec)(packager, args);
   });
 
